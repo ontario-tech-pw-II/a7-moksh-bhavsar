@@ -1,5 +1,5 @@
-#ifndef SICT_CHECKINGACCOUNT_H
-#define SICT_CHECKINGACCOUNT_H
+#ifndef CHECKINGACCOUNT_H
+#define CHECKINGACCOUNT_H
 
 #include "Account.h"
 
