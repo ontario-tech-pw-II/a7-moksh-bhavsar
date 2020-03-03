@@ -17,6 +17,8 @@ double SavingsAccount::calculateInterest() {
 void SavingsAccount::display(ostream & os) const
 {
 	// your code
+	os.precision(2);
+	os << fixed;
 	os << "Account type: Saving" << endl;
 	os << "Balance: $ " << getBalance() << endl;
 	os << "Interest Rate (%): " << interestRate*100 << endl;

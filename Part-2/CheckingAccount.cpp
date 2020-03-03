@@ -14,18 +14,20 @@ CheckingAccount::CheckingAccount( double initialBalance, double fee ) : Account(
 void CheckingAccount::credit( double amount )
 {
 	// your code
-	setBalance(getBalance() + amount - chargeFee());
+	Account::credit(amount);
+	chargeFee();
 } 
 
 // debit (subtract) an amount from the account balance and charge fee
 bool CheckingAccount::debit( double amount )
 {
 	// your code
-	if ( (amount+chargeFee()) > getBalance() ){
-		return false;
-	} else{
-		setBalance(getbalance - amount- chargeFee());
+	bool success = Account::debit(amount);
+	if ( success){
+		chargeFee();
 		return true;
+	} else{
+		return false;
 	}
 }
 
@@ -33,7 +35,7 @@ bool CheckingAccount::debit( double amount )
 void CheckingAccount::chargeFee()
 {
 	// your code
-	transactionFee = transactionFee;
+	setBalance(getBalance() - transactionFee);
 	
 }
 
@@ -42,5 +44,5 @@ void CheckingAccount::display(ostream & os) const
 	// your code
 	os << "Account type: Checking" << endl;
 	os << "Balance: $ " << getBalance() << endl;
-	os << "Transaction Fee: " << chargeFee() << endl;
+	os << "Transaction Fee: " << transactionFee << endl;
 }

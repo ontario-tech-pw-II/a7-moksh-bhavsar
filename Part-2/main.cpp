@@ -36,7 +36,7 @@ int main()
 	cout << "DEPOSIT $ 2000 $ into Angelina Accounts ..." << endl ;
 
 	for(int i=0 ; i < 2 ; i++){
-		Angelina_Account[i]->credit(2000);
+		Angelina_Account[i]->credit(2000);	// This is polymorphism
 	}
 
 	cout << "WITHDRAW $ 1000 (Savings Account) and $ 500 (Checking Account) from Angelina Accounts ..." << endl ;
